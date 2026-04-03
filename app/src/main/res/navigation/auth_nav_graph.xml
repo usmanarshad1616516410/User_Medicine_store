@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/auth_nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.example.blinkit.auth_fragments.SplashFragment"
+        android:label="fragment_splash"
+        tools:layout="@layout/fragment_splash" >
+        <action
+            android:id="@+id/action_splashFragment_to_singInEmailFragment"
+            app:destination="@id/singInEmailFragment"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/signUpEmailFragment"
+        android:name="com.example.blinkit.auth_fragments.signUpEmailFragment"
+        android:label="fragment_sign_up_email"
+        tools:layout="@layout/fragment_sign_up_email" >
+        <action
+            android:id="@+id/action_signUpEmailFragment_to_singInEmailFragment"
+            app:destination="@id/singInEmailFragment"
+            app:popUpTo="@id/signUpEmailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/singInEmailFragment"
+        android:name="com.example.blinkit.auth_fragments.singInEmailFragment"
+        android:label="fragment_sing_in_email"
+        tools:layout="@layout/fragment_sing_in_email" >
+        <action
+            android:id="@+id/action_singInEmailFragment_to_signUpEmailFragment"
+            app:destination="@id/signUpEmailFragment"
+            app:popUpTo="@id/singInEmailFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+</navigation>
